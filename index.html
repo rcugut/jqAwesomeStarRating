@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>jqAwesomeStarRating - jQuery Star Rating plugin with FontAwesome</title>
+
+    <meta name="description" content="jQuery Star Rating plugin with FontAwesome">
+    <meta name="keywords" content="jQuery plugin star rating rate FontAwesome">
+
+    <!-- twBootstrap NOT required; used for this demo page -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- FontAwesome required -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+    <!-- style for the star rating plugin -->
+    <!--<style type="text/css">-->
+        <!--.star-rating i {-->
+            <!--margin-right: 0.2em;-->
+            <!--font-size: 16px;-->
+            <!--cursor: pointer;-->
+        <!--}-->
+        <!--.star-rating .fa-star, .star-rating .fa-star-half-o {-->
+            <!--color: #f8a000;-->
+        <!--}-->
+        <!--.star-rating .fa-star-o {-->
+            <!--color: #cccccc;-->
+        <!--}-->
+    <!--</style>-->
+
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-37379799-2', 'rcugut.github.io');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+            <div class="page-header">
+                <h1>jqAwesomeStarRating</h1>
+                <p>jQuery plugin for star rating input using FontAwesome</p>
+                <a href="https://github.com/rcugut/jqAwesomeStarRating">Fork it on Github</a>
+            </div>
+
+            <h3>Demo</h3>
+            <div>
+                <iframe width="100%" height="260"
+                        src="http://jsfiddle.net/rcugut/FDATw/embedded/result,resources,html,js,css/"
+                        allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            </div>
+
+            <div><p>&nbsp;</p></div>
+
+
+
+            <h3>Usage</h3>
+
+            <h4>Prerequisites</h4>
+            <p><code>FontAwesome</code>: include FontAwesome (>= 4.x) (tip: use the <a href="http://fortawesome.github.io/Font-Awesome/get-started/">CDN hosted version</a>)</p>
+            <p><code>jQuery</code>: include jQuery (1.x or 2.x) before including the plugin source</p>
+
+            <p><strong>CDN hosted version for jqAwesomeStarRating plugin (minimized, gzipped)</strong></p>
+            <input type="text" value="//codenapse-6ab.kxcdn.com/jqAwesomeStarRating-0.1.1.min.js" readonly="readonly" style="width: 100%" />
+
+            <p>&nbsp;</p>
+            <h4>HTML</h4>
+            <p>Just one line of HTML. The plugin will generate the 'stars' as &lt;i&gt; elements and will generate a hidden input field (to be used in forms). You can specify the name of the input field (see below the <code>data-name</code> attribute)</p>
+<pre>
+&lt;div class=&quot;star-rating&quot;&gt;&lt;/div&gt;
+</pre>
+            <h4>Using data attributes</h4>
+            <p>Use <code>data-name</code> to set the hidden input field name.</p>
+            <p>Use <code>data-score</code> to set a default value for the rating (i.e. how many stars). Value between 1 and 5.</p>
+<pre>
+&lt;div class=&quot;star-rating&quot; data-name=&quot;rating&quot; data-score=&quot;3&quot;&gt;&lt;/div&gt;
+</pre>
+
+            <p>&nbsp;</p>
+            <h4>CSS (customize away!)</h4>
+            <p>Use the <code>i</code> selector to style the size and width of the stars.</p>
+            <p>Use the <code>.fa-star</code> to set color for active stars and <code>.fa-star-o</code> for not-active (empty) stars.</p>
+<pre>
+.star-rating i {<br/>  margin-right: 0.2em;<br/>  font-size: 16px;<br/>  cursor: pointer;<br/>}<br/><br/>.star-rating .fa-star,<br />.star-rating .fa-star-half-o {<br/>  color: #f8a000;<br/>}<br/><br/>.star-rating .fa-star-o {<br/>  color: #cccccc;<br/>}
+</pre>
+
+            <p>&nbsp;</p>
+            <h4>Javascript</h4>
+            <p>Call after DOM ready: <code>$('.selector').awesomeStarRating(options)</code></p>
+            <p><strong>Options</strong></p>
+            <p><code>name</code>: the name of the hidden input field generated (not needed if <code>data-name</code> is used)</p>
+            <p><code>score</code>: default number of stars selected (similar effect as <code>data-score</code>)</p>
+            <p><code>onChange:</code> event callback function with one argument representing the selected/current rating (value between 1..5)</p>
+<pre>
+jQuery(function () {<br/>        $('.star-rating').awesomeStarRating({<br/>            onChange: function (score) {<br/>                if(score &gt; 3) {<br/>                    alert('Awesome! You give it ' + score + ' stars!');<br/>                } else if ( score &gt; 1 ) {<br/>                    alert('You give it ' + score + ' stars. That\'s ok :-)');<br/>                } else {<br/>                    alert('Oh... just one star? Really?');<br/>                }<br/>            }<br/>        });<br/>    });
+</pre>
+
+            <div><p>&nbsp;</p></div>
+
+            <h3>Download &amp; profit!</h3>
+
+            <a class="btn btn-primary" href="https://github.com/rcugut/jqAwesomeStarRating">github.com/rcugut/jqAwesomeStarRating</a>
+
+            <h4>CDN hosted version for jqAwesomeStarRating plugin (minimized, gzipped)</strong></h4>
+            <div class="alert alert-info">
+                //codenapse-6ab.kxcdn.com/jqAwesomeStarRating-0.1.1.min.js
+            </div>
+
+
+            <h3>Need help?</h3>
+
+            <a class="btn btn-primary" href="https://github.com/rcugut/jqAwesomeStarRating/issues">Check the issues section</a>
+
+            <p>&nbsp;</p>
+
+            <a class="btn btn-primary" href="https://github.com/rcugut/jqAwesomeStarRating/fork">Fork it and contribute!</a>
+
+
+
+            <div><p>&nbsp;</p></div>
+            <div><p>&nbsp;</p></div>
+
+
+            <h3>License &amp; Credits</h3>
+
+            <p>Many thanks to the amazing projects <a href="http://fortawesome.github.com/Font-Awesome/">FontAwesome</a> and <a href="http://jquery.com">jQuery</a>.</p>
+
+            <p>Licensed under <a href="https://github.com/rcugut/jqAwesomeStarRating/blob/master/LICENSE">MIT license.</a></p>
+            <p>Copyright (c) 2014 <a href="http://raducugut.com">Radu Cugut</a> / rcugut@gmail.com</p>
+            <p>Product of <a href="http://codenapse.com">codenapse.com</a></p>
+
+            <div><p>&nbsp;</p></div>
+
+        </div>
+    </div>
+</div>
+
+<!-- jQuery required -->
+<!--<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>-->
+
+<!-- include the plugin -->
+<!--<script src="jqAwesomeStarRating.js"></script>-->
+
+<!--<script>-->
+    <!--jQuery(function () {-->
+        <!--$('.js-star-rating-1').awesomeStarRating({-->
+            <!--onChange: function (score) {-->
+                <!--if(score > 3) {-->
+                    <!--alert('Awesome! You give it ' + score + ' stars!');-->
+                <!--} else if ( score > 1 ) {-->
+                    <!--alert('You give it ' + score + ' stars. That\'s ok :-)');-->
+                <!--} else {-->
+                    <!--alert('Oh... just one star? Really?');-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+</body>
+</html>

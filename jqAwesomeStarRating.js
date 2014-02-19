@@ -2,11 +2,12 @@
 
 /*
  * @license
- * jqAwesomeStarRating  0.1.0
+ * jqAwesomeStarRating  0.1.1
  * http://github.com/rcugut/jqAwesomeStarRating
  *
  * Copyright 2014, Radu Cugut <rcugut@gmail.com>
  * Licensed under MIT license.
+ * http://codenapse.com
  */
 
 (function() {
@@ -21,6 +22,9 @@
     };
     return $.fn.awesomeStarRating = function(options) {
       var $inputScore, $ratingContainer, $star, i, inputName, onChangeCallback, ratingScore, stars, _i, _results;
+      if (options == null) {
+        options = [];
+      }
       $ratingContainer = this;
       inputName = options['name'] || $ratingContainer.attr('data-name') || 'rating_score';
       ratingScore = parseInt(options['score'] || $ratingContainer.attr('data-score') || 0);

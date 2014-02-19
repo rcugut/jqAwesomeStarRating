@@ -1,10 +1,11 @@
 ###
 # @license
-# jqAwesomeStarRating  0.1.0
+# jqAwesomeStarRating  0.1.1
 # http://github.com/rcugut/jqAwesomeStarRating
 #
 # Copyright 2014, Radu Cugut <rcugut@gmail.com>
 # Licensed under MIT license.
+# http://codenapse.com
 ###
 do ($ = jQuery) ->
 
@@ -15,7 +16,7 @@ do ($ = jQuery) ->
       $star.removeClass('fa-star').addClass('fa-star-o')
 
 
-  $.fn.awesomeStarRating = (options) ->
+  $.fn.awesomeStarRating = (options = []) ->
     $ratingContainer = this
 
     inputName = options['name'] || $ratingContainer.attr('data-name') || 'rating_score'

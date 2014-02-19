@@ -19,8 +19,8 @@ http://rcugut.github.io/jqAwesomeStarRating/
 
 ### options
 
-name: the name of the hidden input field generated (not needed if data-name is used)
+`name`: the name of the hidden input field generated (not needed if data-name is used)
 
-score: default number of stars selected (similar effect as data-score)
+`score`: default number of stars selected (similar effect as data-score)
 
-onChange: event callback function with one argument representing the selected/current rating (value between 1..5)
+`onChange`: event callback function with one argument representing the selected/current rating (value between 1..5)
